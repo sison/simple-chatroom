@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('https://cdn.benbenla.com/blog-icomoon.eot?vp8pjr');
+  src:  url('https://cdn.benbenla.com/blog-icomoon.eot?vp8pjr#iefix') format('embedded-opentype'),
+    url('https://cdn.benbenla.com/blog-icomoon.ttf?vp8pjr') format('truetype'),
+    url('https://cdn.benbenla.com/blog-icomoon.woff?vp8pjr') format('woff'),
+    url('https://cdn.benbenla.com/blog-icomoon.svg?vp8pjr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zan:before {
+  content: "\e900";
+}
+.icon-qq:before {
+  content: "\e901";
+}
+.icon-zhihu:before {
+  content: "\e903";
+}
+.icon-github:before {
+  content: "\e907";
+}
+.icon-weibo:before {
+  content: "\e909";
+}
+.icon-gou:before {
+  content: "\e908";
+}
+.icon-report2:before {
+  content: "\e916";
+}
+.icon-report:before {
+  content: "\e91a";
+}
+.icon-tel:before {
+  content: "\e91d";
+}
+.icon-password:before {
+  content: "\e919";
+}
+.icon-username:before {
+  content: "\e923";
+}
+.icon-question-full:before {
+  content: "\e936";
+}
+.icon-date2:before {
+  content: "\e94f";
+}
+.icon-ellipsis-round:before {
+  content: "\e926";
+}
+.icon-delete:before {
+  content: "\e92c";
+}
+.icon-set-info:before {
+  content: "\e92f";
+}
+.icon-flag-full:before {
+  content: "\e93e";
+}
+.icon-resolve-full:before {
+  content: "\e945";
+}
+.icon-ellipsis:before {
+  content: "\e90b";
+}
+.icon-resolve:before {
+  content: "\e90c";
+}
+.icon-close:before {
+  content: "\e904";
+}
+.icon-sign-full:before {
+  content: "\e959";
+}
+.icon-addr:before {
+  content: "\e906";
+}
+.icon-search:before {
+  content: "\e902";
+}
+.icon-star-full:before {
+  content: "\e905";
+}
+.icon-newspaper:before {
+  content: "\e91b";
+}

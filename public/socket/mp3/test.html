@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>Selection.addRange() test</title>
+</head>
+<body>
+  <button onclick="addRange()">Click me</button>
+  <button onclick="addRange()">Click me</button>
+  <button onclick="addRange()">Click me</button>
+  <button onclick="addRange()">Click me</button>
+  <script>
+  function addRange(){
+    var range = document.createRange();
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+  </script>
+</body>
+</html>

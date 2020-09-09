@@ -1,0 +1,24 @@
+{
+	"apps": {
+		"name": "bbla_nodejs_chat",
+		"cwd": "./",
+		"script": "./app.js",
+		"min_uptime": "60s",
+		"max_restarts": 30,
+		"error_file": "./log/pm2.error.log",
+		"out_file": "./log/pm2.out.log",
+		"pid_file": "./pm2.pid",
+		"log_date_format"  : "YYYY-MM-DD HH:mm:SS",
+		"env": {
+			"NODE_ENV": "production"
+		},
+		"ignore_watch": [
+			"node_modules"
+		],
+ 		"watch": [
+			"public",
+			"views"
+		]
+	}
+}
+

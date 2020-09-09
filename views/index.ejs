@@ -1,0 +1,100 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>socket.io chatroom</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+ </head>
+ <body>
+	<h1>socket.io chatroom <%= roomID %></h1>
+	<ul></ul>
+	<form id="sendMsgForm">
+		<div>
+			<input id="iptMsg" autocomplete="off" />
+			<button type="submit">SEND</button>
+		</div>
+	</form>
+	<div class="ceng">
+		<div class="shadow"></div>
+		<form id="setNameForm">
+			<p>Please enter your name</p>
+			<div>
+				<input id="iptName" autocomplete="off" />
+				<button type="submit">ENTER</button>
+			</div>
+		</form>
+	</div>
+
+	<script type="text/javascript" src="/jquery.js"></script>
+	<script type="text/javascript" src="socket.io.js"></script>
+	<script type="text/javascript">
+		var socket = io()
+
+		$('#sendMsgForm').on('submit', e => {
+			e.preventDefault()
+			socket.emit('say', $('#iptMsg').val())
+			$('#iptMsg').val('')
+			return false
+		})
+
+		$('#setNameForm').on('submit', e => {
+			$('.ceng').fadeOut('250')
+			e.preventDefault()
+			socket.emit('set name', $('#iptName').val())
+			$('#iptName').val('')
+			return false
+		})
+
+		/** 内置事件
+		socket.on('connecting', () => {
+		})		
+		socket.on('connect', () => {
+		})
+		socket.on('disconnect', () => {
+		})
+		socket.on('error', () => {
+		})
+		socket.on('reconnect', () => {
+		})
+		socket.on('connect_failed', () => {
+		})
+		*/
+
+		const broadcastFun = txt => {
+			$('ul').append($('<li>').text(txt).addClass('broadcast'))
+		}
+
+		// socket.on('connect to room',  txt => {
+		// 	alert(txt)
+		// })
+
+		// socket.on('somebody in', txt => {
+		// 	broadcastFun(txt)
+		// })
+
+		socket.on('broadcast', txt => {
+			broadcastFun(txt)
+		})
+
+		socket.on('say', data => {
+			var _html = '<li><span>'+ data.user.name +'</span><p>'+ data.txt +'</p></li>'
+			$('ul').append(_html)
+		})
+
+
+		// 	------------- my-namespace
+
+		// var nsp = io('/my-namespace')
+
+		// nsp.on('welcome', txt => {
+		// 	alert(txt)
+		// })
+
+
+
+
+
+
+	</script>
+ </body>
+</html>
